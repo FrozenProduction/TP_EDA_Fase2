@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.12.6)  18 MAY 2025 12:51
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.12.6)  18 MAY 2025 12:58
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -463,8 +463,14 @@ File: lstmisc.sty 2024/09/23 1.10c (Carsten Heinz)
 ]
 
 [6]
+<intersecoes.png, id=202, 902.37125pt x 1604.99625pt>
+File: intersecoes.png Graphic file (type png)
+<use intersecoes.png>
+Package pdftex.def Info: intersecoes.png  used on input line 196.
+(pdftex.def)             Requested size: 182.09486pt x 323.8834pt.
 
-[7]
+
+[7 <./intersecoes.png>]
 Cap\'{\i }tulo 4.
 
 
@@ -489,17 +495,17 @@ Package rerunfilecheck Info: File `relatorio.out' has not changed.
 (rerunfilecheck)             Checksum: 0D43D1DA35CA84F1867F4DDBC936D2A7;2433.
  ) 
 Here is how much of TeX's memory you used:
- 13249 strings out of 473682
- 205465 string characters out of 5719216
- 831390 words of memory out of 5000000
- 36054 multiletter control sequences out of 15000+600000
+ 13262 strings out of 473682
+ 205720 string characters out of 5719216
+ 831448 words of memory out of 5000000
+ 36066 multiletter control sequences out of 15000+600000
  572215 words of font info for 67 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  75i,9n,79p,769b,1942s stack positions out of 10000i,1000n,20000p,200000b,200000s
  <C:\Users\diogo\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ectt1095.pk> <C:\Users\diogo\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecti1200.pk> <C:\Users\diogo\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1440.pk> <C:\Users\diogo\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ectt1200.pk> <C:\Users\diogo\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1200.pk> <C:\Users\diogo\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1728.pk> <C:\Users\diogo\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx2488.pk> <C:\Users\diogo\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm1200.pk> <C:\Users\diogo\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1200.pk> <C:\Users\diogo\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm1440.pk> <C:\Users\diogo\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx2074.pk><C:/Users/diogo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Users/diogo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/diogo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb>
-Output written on relatorio.pdf (12 pages, 197770 bytes).
+Output written on relatorio.pdf (12 pages, 298946 bytes).
 PDF statistics:
- 654 PDF objects out of 1000 (max. 8388607)
- 110 named destinations out of 1000 (max. 500000)
- 145 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 656 PDF objects out of 1000 (max. 8388607)
+ 111 named destinations out of 1000 (max. 500000)
+ 150 words of extra memory for PDF output out of 10000 (max. 10000000)
 
