@@ -5,12 +5,12 @@
  * @details Implementa a Fase 2 do Projeto de Estruturas de Dados Avançadas (EDA), com:
  * - Representação de antenas como vértices num grafo
  * - Conexões entre antenas da mesma frequência como arestas
- * - Algoritmos de travessia em grafos (DFS e BFS)
+ * - Algoritmos de procura em grafos (DFS e BFS)
  * - Cálculo de caminhos entre antenas
  * - Deteção de intersecções entre frequências diferentes
  * 
  * @author Diogo Pereira
- * @date Maio 2025
+ * @date 18 Maio 2025
  * @version 1.0
  * 
  * @copyright Copyright (c) 2025
@@ -62,7 +62,7 @@ struct Vertice {
     char frequencia;        ///< Caracter que representa a frequência da antena
     int x;                  ///< Coordenada x (coluna) da antena no mapa
     int y;                  ///< Coordenada y (linha) da antena no mapa
-    bool visitado;          ///< Flag para marcar se o vértice foi visitado em algoritmos de travessia
+    bool visitado;          ///< Flag para marcar se o vértice foi visitado em algoritmos de procura
     Aresta* arestas;        ///< Lista de arestas que partem deste vértice
     Vertice* proximo;       ///< Próximo vértice na lista de vértices do grafo
 };

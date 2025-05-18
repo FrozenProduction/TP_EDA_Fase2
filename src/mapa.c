@@ -9,7 +9,7 @@
  * - Deteção de posições com interferência entre antenas
  * 
  * @author Diogo Pereira
- * @date Maio 2025
+ * @date 18 Maio 2025
  * @version 1.0
  * 
  * @copyright Copyright (c) 2025

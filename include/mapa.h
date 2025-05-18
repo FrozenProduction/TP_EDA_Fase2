@@ -9,7 +9,7 @@
  * - Visualização de mapas com antenas e efeitos nefastos
  * 
  * @author Diogo Pereira
- * @date Maio 2025
+ * @date 18 Maio 2025
  * @version 1.0
  * 
  * @copyright Copyright (c) 2025

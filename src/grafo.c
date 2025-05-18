@@ -5,12 +5,12 @@
  * @details Implementa todas as funções declaradas em grafo.h, incluindo:
  * - Criação e destruição de grafos
  * - Operações básicas com vértices e arestas
- * - Algoritmos de travessia (DFS e BFS)
+ * - Algoritmos de procura (DFS e BFS)
  * - Cálculo de caminhos entre vértices
  * - Deteção de intersecções entre frequências
  * 
  * @author Diogo Pereira
- * @date Maio 2025
+ * @date 18 Maio 2025
  * @version 1.0
  * 
  * @copyright Copyright (c) 2025
@@ -469,7 +469,7 @@ Vertice* encontrar_vertice(Grafo* grafo, int x, int y) {
  * @param grafo Apontador para o grafo
  * @return 0 em caso de sucesso, -1 em caso de erro
  * 
- * @details Pré-requisito para algoritmos de travessia do grafo
+ * @details Pré-requisito para algoritmos de procura do grafo
  */
 int reiniciar_visitados(Grafo* grafo) {
     if (!grafo) return -1;
