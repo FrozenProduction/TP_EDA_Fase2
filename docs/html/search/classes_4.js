@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['intersecao_0',['Intersecao',['../struct_intersecao.html',1,'']]]
+  ['mapa_0',['Mapa',['../struct_mapa.html',1,'']]]
 ];

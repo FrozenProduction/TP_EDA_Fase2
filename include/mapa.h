@@ -24,25 +24,10 @@
 #include "grafo.h"
 
 /**
- * @struct Dimensoes
- * @brief Armazena as dimensões de um mapa (número de linhas e colunas)
- */
-typedef struct Dimensoes Dimensoes;
-
-/**
  * @struct Mapa
  * @brief Representa uma linha do mapa para visualização
  */
 typedef struct Mapa Mapa;
-
-/**
- * @struct Dimensoes
- * @brief Contém as dimensões de um mapa de antenas
- */
-struct Dimensoes {
-    int linhas;     ///< Número de linhas do mapa
-    int colunas;    ///< Número de colunas do mapa
-};
 
 /**
  * @struct Mapa
@@ -53,15 +38,23 @@ struct Mapa {
     Mapa* prox;     ///< Apontador para a próxima linha do mapa
 };
   
+
 /**
- * @brief Carrega um mapa a partir de um ficheiro e converte para grafo
- * @param ficheiro Nome do ficheiro contendo o mapa
+ * @brief Implementação da criação do mapa padrão em formato binário
+ * @return 0 se o ficheiro foi criado com sucesso, -1 em caso de erro
  * 
- * @details O formato do ficheiro deve ser:
- * - Primeira linha: número de linhas e colunas
- * - Linhas seguintes: representação do mapa com:
- *   - '.' para posições vazias
- *   - Caracteres alfanuméricos para representar antenas
+ */
+int criar_mapa_padrao();
+
+/**
+ * @brief Carrega um mapa a partir de um ficheiro binário e converte para grafo
+ * @param ficheiro Nome do ficheiro binário contendo o mapa
+ * @return Apontador para o grafo criado ou NULL em caso de erro
+ * 
+ * @details O formato do ficheiro binário deve ser:
+ * - 4 bytes: número de linhas (int)
+ * - 4 bytes: número de colunas (int)
+ * - Seguido pelos caracteres do mapa (sem quebras de linha)
  */
 Grafo* carregar_mapa(const char* ficheiro);
 

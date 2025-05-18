@@ -36,12 +36,12 @@
  * 6. Detetar intersecções entre frequências
  * 7. Libertar todos os recursos
  * 
- * @note O programa assume que o ficheiro do mapa está em "data/mapa.txt"
+ * @note O programa assume que o ficheiro do mapa está em "data/mapa.bin"
  * e contém antenas nas posições esperadas para as demonstrações.
  */
 int main() {
     // 1. Carregar mapa
-    Grafo* grafo = carregar_mapa("data/mapa.txt");
+    Grafo* grafo = carregar_mapa("data/mapa.bin");
     if (!grafo) {
         printf("Erro ao carregar mapa\n");
         return 1;

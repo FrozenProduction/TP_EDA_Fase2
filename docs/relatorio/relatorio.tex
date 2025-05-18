@@ -109,9 +109,11 @@ O sistema foi redesenhado com os seguintes requisitos:
 A estrutura principal foi implementada em C com:
 
 \begin{itemize}
-    \item \texttt{grafo.h/c} - Núcleo das operações sobre grafos
-    \item \texttt{mapa.h/c} - Carregamento e visualização
-    \item \texttt{main.c} - Demonstração das funcionalidades
+    \item \texttt{include/} - Cabeçalhos (.h)
+    \item \texttt{src/} - Implementação (.c) 
+    \item \texttt{lib/} - Bibliotecas compiladas (.lib)
+    \item \texttt{main/} - Programa principal
+    \item \texttt{data/} - Ficheiros de dados (mapa.bin)
 \end{itemize}
 
 \subsection{Estruturas de Dados}
@@ -196,6 +198,91 @@ bool calcular_intersecao(Vertice* p1, Vertice* p2,
 \includegraphics[width=0.4\textwidth]{intersecoes.png}
 \caption{Representação de interseções}
 \label{fig:grafo}
+\end{figure}
+
+\subsection{Ficheiro Binário do Mapa}
+
+Usar ficheiros binários em vez de ficheiros de texto oferece benefícios como:
+
+\begin{enumerate}
+    \item Maior eficiência no armazenamento e acesso
+    \item Ficheiros binários podem armazenar dados de forma mais compacta e eficientemente
+    \item Menores tamanhos de ficheiro e acesso mais rápido aos dado
+\end{enumerate}
+
+\subsection{Makefile}
+O sistema de compilação utiliza:
+
+\begin{lstlisting}[language=make]
+# Compilador e flags
+CC = gcc
+CFLAGS = -Iinclude -Wall -Wextra -pedantic
+
+# Diretorios
+LIBDIR = lib
+SRCDIR = src
+MAINDIR = main
+
+# Regras principais
+all: projeto_edafase2.exe
+
+$(LIBDIR)/grafo.lib: $(SRCDIR)/grafo.c include/grafo.h
+	$(CC) $(CFLAGS) -c $< -o grafo.obj
+	ar rcs $@ grafo.obj
+	del grafo.obj
+
+$(LIBDIR)/mapa.lib: $(SRCDIR)/mapa.c include/mapa.h
+	$(CC) $(CFLAGS) -c $< -o mapa.obj
+	ar rcs $@ mapa.obj
+	del mapa.obj
+
+projeto_edafase2.exe: $(MAINDIR)/main.c $(LIBDIR)
+                        /grafo.lib $(LIBDIR)/mapa.lib
+	$(CC) $(CFLAGS) -L$(LIBDIR) $< -lgrafo -lmapa -o $@
+\end{lstlisting}
+
+\subsection{Bibliotecas Geradas}
+\subsubsection{grafo.lib}
+Contém todas as operações sobre grafos:
+\begin{itemize}
+    \item Criação/destruição de grafos
+    \item Operações com vértices e arestas
+    \item Algoritmos DFS/BFS
+    \item Cálculo de caminhos e intersecções
+\end{itemize}
+
+\subsubsection{mapa.lib}
+Fornece funcionalidades de:
+\begin{itemize}
+    \item Carregamento de mapas binários
+    \item Conversão para estrutura de grafo
+    \item Visualização do mapa com interferências
+    \item Geração do mapa padrão
+\end{itemize}
+
+\subsection{Fluxo de Dados}
+O diagrama abaixo ilustra o fluxo principal:
+
+\begin{figure}[H]
+\centering
+\begin{minipage}{0.9\textwidth}
+\begin{lstlisting}[basicstyle=\ttfamily\footnotesize]
++--------------+     +------------+      +------------+  
+| mapa.bin     | --> | mapa.lib   | -->  | grafo.lib  |
+| (dados bin)  |     | (leitura)  |      | (grafos)   |
++--------------+     +------------+      +------------+ 
+                                               |
+                                               |
+                                               v 
+                                         +------------+
+                                         | Executavel |
+                                         | (main.c)   |
+                                         +------------+
+
+\end{lstlisting}
+\end{minipage}
+\caption{Fluxo de processamento dos dados}
+\label{fig:dataflow}
 \end{figure}
 
 \chapter{Análise de Resultados}

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['grafo_0',['Grafo',['../struct_grafo.html',1,'']]]
+  ['intersecao_0',['Intersecao',['../struct_intersecao.html',1,'']]]
 ];

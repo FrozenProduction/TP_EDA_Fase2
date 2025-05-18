@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['grafo_0',['Grafo',['../grafo_8h.html#adab04f64457aac52a13e71e40915bd43',1,'grafo.h']]]
+  ['intersecao_0',['Intersecao',['../grafo_8h.html#ab50d1c68c7725f60975288845dffd9ae',1,'grafo.h']]]
 ];

@@ -20,57 +20,124 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+#include <direct.h>
 #include "grafo.h"
 #include "mapa.h"
 
 /**
- * @brief Carrega um mapa a partir de ficheiro e converte para estrutura de grafo
- * @param ficheiro Nome do ficheiro contendo o mapa
- * @return Apontador para o grafo criado ou NULL em caso de erro
+ * @brief Cria um ficheiro binário padrão com o mapa inicial
+ * @return 0 em caso de sucesso, -1 em caso de erro
  * 
- * @details O formato do ficheiro deve conter:
- * - Dimensões do mapa (linhas colunas)
- * - Matriz de caracteres onde:
- *   - '.' representa posições vazias
- *   - Caracteres alfanuméricos representam antenas
+ * @details A função cria um diretório "data" se não existir e gera um ficheiro binário
+ * chamado "mapa.bin" com um mapa pré-definido
  * 
- * @note Cria arestas entre todas as antenas da mesma frequência
+ * O formato do ficheiro segue estritamente:
+ * 1. Dois inteiros (4 bytes cada) para linhas e colunas
+ * 2. Sequência de caracteres (1 byte cada) representando as linhas do mapa
+ * 
+ * @note Esta função é chamada automaticamente se o ficheiro de mapa não existir
+ */
+int criar_mapa_padrao() {
+
+    const char* mapa[] = {
+        "............",
+        "............",
+        "............",
+        ".......0....",
+        "....0.......",
+        "......A.....",
+        ".........0..",
+        ".....0......",
+        "........A...",
+        "............",
+        ".......A....",
+        "............"
+    };
+    
+    // Cria diretório se não existir
+    _mkdir("data");
+    
+    FILE* file = fopen("data/mapa.bin", "wb");
+    if (!file) return -1;
+    
+    // Escreve dimensões
+    int linhas = 12, colunas = 12;
+    fwrite(&linhas, sizeof(int), 1, file);
+    fwrite(&colunas, sizeof(int), 1, file);
+    
+    // Escreve dados do mapa
+    for (int i = 0; i < linhas; i++) {
+        fwrite(mapa[i], sizeof(char), colunas, file);
+    }
+    
+    fclose(file);
+    return 0;
+}
+
+/**
+ * @brief Implementação do carregamento de mapa a partir de ficheiro binário
+ * @param ficheiro Caminho para o ficheiro binário contendo o mapa
+ * @return Apontador para grafo criado ou NULL em caso de erro
+ * 
+ * @details A função:
+ * 1. Abre o ficheiro em modo binário ("rb")
+ * 2. Lê as dimensões (2 × sizeof(int))
+ * 3. Aloca memória para o grafo e buffers temporários
+ * 4. Processa cada linha do mapa, adicionando vértices para antenas
+ * 5. Conecta arestas entre antenas da mesma frequência
+ * 
+ * @note Se o ficheiro não existir, chama criar_mapa_padrao() e tenta novamente
  */
 Grafo* carregar_mapa(const char* ficheiro) {
     if (!ficheiro) return NULL;
     
-    FILE* file = fopen(ficheiro, "r");
-    if (file == NULL) return NULL;
+    FILE* file = fopen(ficheiro, "rb");
+    if (!file) {
+        if (criar_mapa_padrao() != 0) return NULL;
+        file = fopen(ficheiro, "rb");
+        if (!file) return NULL;
+    }
     
     int linhas, colunas;
-    if (fscanf(file, "%d %d", &linhas, &colunas) != 2) {
+    if (fread(&linhas, sizeof(int), 1, file) != 1 ||
+        fread(&colunas, sizeof(int), 1, file) != 1) {
         fclose(file);
         return NULL;
     }
     
     Grafo* grafo = criar_grafo();
-    if (grafo == NULL) {
+    if (!grafo) {
         fclose(file);
         return NULL;
     }
     
-    // Ler mapa linha por linha
+    char* linha = malloc(colunas + 1); // +1 para segurança
+    if (!linha) {
+        fclose(file);
+        destruir_grafo(grafo);
+        return NULL;
+    }
+    
     for (int y = 0; y < linhas; y++) {
+        size_t elementos_lidos = fread(linha, sizeof(char), colunas, file);
+        if (elementos_lidos != (size_t)colunas) { // Corrige o warning aqui
+            free(linha);
+            fclose(file);
+            destruir_grafo(grafo);
+            return NULL;
+        }
+        
         for (int x = 0; x < colunas; x++) {
-            char c = fgetc(file);
-            if (c == '\n' || c == '\r') {
-                x--; // Ignorar quebras de linha
-                continue;
-            }
-            if (c != '.') {
-                adicionar_vertice(grafo, c, x, y);
+            if (linha[x] != '.') {
+                adicionar_vertice(grafo, linha[x], x, y);
             }
         }
     }
     
+    free(linha);
     fclose(file);
     
-    // Conectar arestas entre antenas da mesma frequência
+    // Conectar arestas (mantenha sua implementação atual)
     Vertice* v = grafo->vertices;
     while (v != NULL) {
         Vertice* u = grafo->vertices;

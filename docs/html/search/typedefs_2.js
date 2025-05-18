@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['dimensoes_0',['Dimensoes',['../mapa_8h.html#a502fec0ce7e0482b9773e74589c8b607',1,'mapa.h']]]
+  ['grafo_0',['Grafo',['../grafo_8h.html#adab04f64457aac52a13e71e40915bd43',1,'grafo.h']]]
 ];

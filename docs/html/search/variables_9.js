@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['x_0',['x',['../struct_vertice.html#a1438c5dc5f780e2621b4350b2f940fb0',1,'Vertice::x'],['../struct_intersecao.html#a498a09d81b8c929dbc9f328d8c2e5883',1,'Intersecao::x']]]
+  ['y_0',['y',['../struct_vertice.html#ae9aae69725a37b059383c13ccd43a95e',1,'Vertice::y'],['../struct_intersecao.html#a9a36ab21f36fdf20216b845f7e148aaf',1,'Intersecao::y']]]
 ];

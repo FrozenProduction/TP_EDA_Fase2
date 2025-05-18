@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['mapa_0',['Mapa',['../struct_mapa.html',1,'']]]
+  ['nodefila_0',['NodeFila',['../struct_node_fila.html',1,'']]]
 ];

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['linhas_0',['linhas',['../struct_dimensoes.html#a426380b03a3c3a8c9cdb0962acfdb213',1,'Dimensoes']]]
+  ['num_5fvertices_0',['num_vertices',['../struct_grafo.html#a7b5ec4ea90f8a14c4ac6dead5f6cfa45',1,'Grafo']]]
 ];

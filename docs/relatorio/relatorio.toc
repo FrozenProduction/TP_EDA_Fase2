@@ -14,9 +14,15 @@
 \contentsline {subsection}{\numberline {3.2.2}Algoritmos Implementados}{6}{subsection.3.2.2}%
 \contentsline {subsubsection}{Procura em Profundidade (DFS)}{6}{section*.2}%
 \contentsline {subsubsection}{Procura em Largura (BFS)}{6}{section*.3}%
-\contentsline {subsubsection}{Intersecções entre Frequências}{6}{section*.4}%
-\contentsline {chapter}{\numberline {4}Análise de Resultados}{8}{chapter.4}%
-\contentsline {section}{\numberline {4.1}Casos de Teste}{8}{section.4.1}%
-\contentsline {section}{\numberline {4.2}Desempenho}{8}{section.4.2}%
-\contentsline {chapter}{\numberline {5}Conclusão}{9}{chapter.5}%
-\contentsline {chapter}{Repositório GitHub}{10}{chapter*.5}%
+\contentsline {subsubsection}{Intersecções entre Frequências}{7}{section*.4}%
+\contentsline {subsection}{\numberline {3.2.3}Ficheiro Binário do Mapa}{7}{subsection.3.2.3}%
+\contentsline {subsection}{\numberline {3.2.4}Makefile}{8}{subsection.3.2.4}%
+\contentsline {subsection}{\numberline {3.2.5}Bibliotecas Geradas}{8}{subsection.3.2.5}%
+\contentsline {subsubsection}{grafo.lib}{8}{section*.5}%
+\contentsline {subsubsection}{mapa.lib}{8}{section*.6}%
+\contentsline {subsection}{\numberline {3.2.6}Fluxo de Dados}{9}{subsection.3.2.6}%
+\contentsline {chapter}{\numberline {4}Análise de Resultados}{10}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Casos de Teste}{10}{section.4.1}%
+\contentsline {section}{\numberline {4.2}Desempenho}{10}{section.4.2}%
+\contentsline {chapter}{\numberline {5}Conclusão}{11}{chapter.5}%
+\contentsline {chapter}{Repositório GitHub}{12}{chapter*.7}%
