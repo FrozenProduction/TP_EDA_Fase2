@@ -11,3 +11,9 @@ del mapa.obj
 
 gcc -Iinclude -Llib main.c -lgrafo -lmapa -o projeto_edafase2.exe
 .\projeto_edafase2.exe
+
+ou
+
+make clean
+make
+./projeto_edafase2.exe
