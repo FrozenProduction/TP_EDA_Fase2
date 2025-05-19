@@ -53,7 +53,7 @@ int criar_mapa_padrao() {
         "............"
     };
     
-    // Cria pasta se não existirs
+    // Cria pasta se não existir
     _mkdir("data");
     
     FILE* file = fopen("data/mapa.bin", "wb");
