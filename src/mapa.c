@@ -28,8 +28,8 @@
  * @brief Cria um ficheiro binário padrão com o mapa inicial
  * @return 0 em caso de sucesso, -1 em caso de erro
  * 
- * @details A função cria um diretório "data" se não existir e gera um ficheiro binário
- * chamado "mapa.bin" com um mapa pré-definido
+ * @details A função cria uma pasta "data" se não existir e gera um ficheiro binário
+ * chamado "mapa.bin" com um mapa pré-definido (podemos alterar esse mapa)
  * 
  * O formato do ficheiro segue estritamente:
  * 1. Dois inteiros (4 bytes cada) para linhas e colunas
@@ -38,7 +38,6 @@
  * @note Esta função é chamada automaticamente se o ficheiro de mapa não existir
  */
 int criar_mapa_padrao() {
-
     const char* mapa[] = {
         "............",
         "............",
@@ -54,7 +53,7 @@ int criar_mapa_padrao() {
         "............"
     };
     
-    // Cria diretório se não existir
+    // Cria pasta se não existirs
     _mkdir("data");
     
     FILE* file = fopen("data/mapa.bin", "wb");
@@ -120,7 +119,7 @@ Grafo* carregar_mapa(const char* ficheiro) {
     
     for (int y = 0; y < linhas; y++) {
         size_t elementos_lidos = fread(linha, sizeof(char), colunas, file);
-        if (elementos_lidos != (size_t)colunas) { // Corrige o warning aqui
+        if (elementos_lidos != (size_t)colunas) {
             free(linha);
             fclose(file);
             destruir_grafo(grafo);
@@ -137,7 +136,7 @@ Grafo* carregar_mapa(const char* ficheiro) {
     free(linha);
     fclose(file);
     
-    // Conectar arestas (mantenha sua implementação atual)
+    // Conectar arestas
     Vertice* v = grafo->vertices;
     while (v != NULL) {
         Vertice* u = grafo->vertices;
